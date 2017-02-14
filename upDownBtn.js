@@ -60,19 +60,20 @@ function enableBtn(enabBtn) {
 
 //scroll-им по страничке 
 var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
+var offSet = 30;
 window.addEventListener("scroll", function() {
 
     console.log(document.body.scrollTop);
-    if (document.body.scrollTop <= winheight + 50) {
+    if (document.body.scrollTop <= winheight + offSet) {
         position = 0;
         enableBtn(btnDown);
         disableBtn(btnUp);
-    } else if (document.body.scrollTop <= 2 * winheight + 50) {
+    } else if (document.body.scrollTop <= 2 * winheight + offSet) {
         position = 1;
         enableBtn(btnDown);
         enableBtn(btnUp);
 
-    } else if (document.body.scrollTop <= 3 * winheight + 50) {
+    } else if (document.body.scrollTop <= 3 * winheight + offSet) {
         position = 2;
         enableBtn(btnDown);
         enableBtn(btnUp);
