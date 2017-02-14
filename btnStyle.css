@@ -23,3 +23,20 @@ button {
 .disabled {
     display: none;
 }
+
+.navbar {
+    height: 5vh;
+    margin-bottom: 0;
+}
+
+.jsElms {
+    height: 100vh
+}
+
+.jsElms:nth-child(0) {
+    height: 95vh
+}
+
+.jsElms:nth-child(2n) {
+    background-color: #A4ACB1;
+}

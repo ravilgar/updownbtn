@@ -60,7 +60,7 @@ function enableBtn(enabBtn) {
 
 //scroll-им по страничке 
 var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
-var offSet = 30;
+var offSet = -130;
 window.addEventListener("scroll", function() {
 
     console.log(document.body.scrollTop);
