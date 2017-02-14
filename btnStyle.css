@@ -2,11 +2,24 @@ button {
     width: 100px;
     height: 50px;
     margin-top: 15px;
+}
 
+#btnUp {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+}
+
+#btnDown {
+    position: fixed;
+    top: 160px;
+    right: 25px;
 }
 
 .glyphicon {
     font-size: 25px;
-
 }
 
+.disabled {
+    display: none;
+}

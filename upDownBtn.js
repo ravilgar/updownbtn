@@ -13,9 +13,7 @@ console.log(position);
 
 
 function up() {
-    btnDown.disabled = false;
-    btnDown.classList.add("btn-success")
-    console.log('btnDown is active')
+    enableBtn(btnDown);
     position -= 1; // Изменили позицию
 
     if (position <= 0) {
@@ -29,9 +27,7 @@ function up() {
 }
 
 function down() {
-    btnUp.disabled = false;
-    btnUp.classList.add("btn-success")
-    console.log('btn is active')
+    enableBtn(btnUp);
 
     position += 1; // Изменили позицию
     if (position >= elements.length - 1) {
@@ -46,7 +42,7 @@ function down() {
 
 // Выключаем кнопку
 function disableBtn(disBtn) {
-    disBtn.disabled = true;
+    disBtn.classList.add("disabled");
     disBtn.classList.remove("btn-success");
     console.log('btn is disabled');
 }
@@ -55,9 +51,34 @@ if (position === 0) {
     disableBtn(btnUp);
 }
 
-
-
 // Включаем кнопку
-function enableBtn(enabBtn) {}
+function enableBtn(enabBtn) {
+    enabBtn.classList.remove("disabled");
+    enabBtn.classList.add("btn-success")
+    console.log('btn is active')
+}
 
+//scroll-им по страничке 
+var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
+window.addEventListener("scroll", function() {
 
+    console.log(document.body.scrollTop);
+    if (document.body.scrollTop <= winheight + 50) {
+        position = 0;
+        enableBtn(btnDown);
+        disableBtn(btnUp);
+    } else if (document.body.scrollTop <= 2 * winheight + 50) {
+        position = 1;
+        enableBtn(btnDown);
+        enableBtn(btnUp);
+
+    } else if (document.body.scrollTop <= 3 * winheight + 50) {
+        position = 2;
+        enableBtn(btnDown);
+        enableBtn(btnUp);
+    } else {
+        position = 3;
+        disableBtn(btnDown);
+        enableBtn(btnUp);
+    }
+});
