@@ -45,10 +45,6 @@ function disableBtn(disBtn) {
     disBtn.classList.add("disabled");
     disBtn.classList.remove("btn-success");
 }
-// Выключаем кнопку при загрузке страницы
-if (position === 0) {
-    disableBtn(btnUp);
-}
 
 // Включаем кнопку
 function enableBtn(enabBtn) {
