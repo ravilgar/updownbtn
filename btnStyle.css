@@ -25,7 +25,8 @@ button {
 }
 
 .jsElms {
-    height: 100vh
+    height: 954px;
+    min-height: 100vh;
 }
 
 .jsElms:nth-child(0) {

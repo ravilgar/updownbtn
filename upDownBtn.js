@@ -61,40 +61,37 @@ for (var i = 0; i < elementHeight.length; i++) {
         elementHeight[i]);
 }
 
-var navbar = document.querySelector('.navbar').clientHeight;
-console.log('navbar = ' +
-    navbar);
 var offSet = 0;
 
 
 window.addEventListener("scroll", function() {
 
 
-    if (document.body.scrollTop <= navbar + elementHeight[0] + offSet) {
+    if (document.body.scrollTop <= elementHeight[0] + offSet) {
         position = 0;
         enableBtn(btnDown);
         disableBtn(btnUp);
         console.log('scrollLevel = ' +
-            navbar + elementHeight[0] + offSet);
-    } else if (document.body.scrollTop <= navbar + elementHeight[0] + elementHeight[1] + offSet) {
+            elementHeight[0] + offSet);
+    } else if (document.body.scrollTop <= elementHeight[0] + elementHeight[1] + offSet) {
         position = 1;
         enableBtn(btnDown);
         enableBtn(btnUp);
         console.log('scrollLevel = ' +
-            navbar + elementHeight[0] + elementHeight[1] + offSet);
+            elementHeight[0] + elementHeight[1] + offSet);
 
-    } else if (document.body.scrollTop <= navbar + elementHeight[0] + elementHeight[1] + elementHeight[2] + offSet) {
+    } else if (document.body.scrollTop <= elementHeight[0] + elementHeight[1] + elementHeight[2] + offSet) {
         position = 2;
         enableBtn(btnDown);
         enableBtn(btnUp);
         console.log('scrollLevel = ' +
-            navbar + elementHeight[0] + elementHeight[1] + elementHeight[2] + offSet);
+            elementHeight[0] + elementHeight[1] + elementHeight[2] + offSet);
     } else {
         position = 3;
         disableBtn(btnDown);
         enableBtn(btnUp);
         console.log('scrollLevel = ' +
-            navbar + elementHeight[0] + elementHeight[1] + elementHeight[2]+ elementHeight[3] + offSet);
+            elementHeight[0] + elementHeight[1] + elementHeight[2] + elementHeight[3] + offSet);
     }
 
 
@@ -105,3 +102,11 @@ window.addEventListener("scroll", function() {
     console.log('position = ' +
         position);
 });
+
+//при изменении размеров страницы перепишем переменные для scroll
+window.onresize = function(event) {
+    var elementHeight = [elements[0].clientHeight, elements[1].clientHeight, elements[2].clientHeight, elements[3].clientHeight];
+    var navbar = document.querySelector('.navbar').clientHeight;
+    console.log('navbar = ' +
+        navbar);
+};
