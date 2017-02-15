@@ -24,11 +24,6 @@ button {
     display: none;
 }
 
-.navbar {
-    height: 5vh;
-    margin-bottom: 0;
-}
-
 .jsElms {
     height: 100vh
 }
